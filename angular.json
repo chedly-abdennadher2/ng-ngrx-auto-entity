@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-ngrx-auto-entity"
+    }
+  },
+  "defaultProject": "ng-ngrx-auto-entity",
+  "cli": {
+    "analytics": "26e9e357-7bb1-4be6-8e77-995489433976"
+  }
 }
