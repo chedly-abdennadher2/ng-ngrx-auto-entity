@@ -10,6 +10,7 @@ import { appReducer } from './state/app.state';
 import {HttpClientModule} from '@angular/common/http';
 import { Student } from './model/Student';
 import { StudentService } from './services/studentservice';
+import { StudentFacade } from './facades/student.facade';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { StudentService } from './services/studentservice';
     EffectsModule.forRoot([]),
 
   ],
-  providers: [{provide : Student, useClass:StudentService}],
+  providers: [{provide : Student, useClass:StudentService},
+    ,StudentService,
+    StudentFacade
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

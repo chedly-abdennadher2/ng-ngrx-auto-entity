@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { StudentFacadeBase } from "../state/StudentState";
+import { StudentFacadeBase, loadAll } from "../state/StudentState";
 import { Store } from "@ngrx/store";
 import { AppState } from "../state/app.state";
 import { Student } from "../model/Student";
@@ -9,15 +9,10 @@ import { StudentService } from "../services/studentservice";
     providedIn: 'root'
   })
   export class StudentFacade extends StudentFacadeBase {
-   constructor (store :Store<AppState>,private studentService:StudentService)
+   constructor (private store :Store<AppState>,private studentService:StudentService)
    {
     super (Student,store)
    } 
-   public loadAll(criteria?: any, correlationId?: string): string {
-   {
-    return "success"
-  
-  }
    
    }    
-  }
+  
