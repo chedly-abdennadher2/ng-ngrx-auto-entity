@@ -3,7 +3,8 @@ import { Entity, Key, uriNameOfEntity } from "@briebug/ngrx-auto-entity";
 
 export class Student {
 
-
+public modelName:string ="Student"
+public modelType:any;
 @Key id:number;
 public firstName:string;
 public lastName:string; 
