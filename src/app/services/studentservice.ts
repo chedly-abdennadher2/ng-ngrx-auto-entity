@@ -13,7 +13,6 @@ export class StudentService  implements  IAutoEntityService<any>{
 public   constructor(private http: HttpClient) { }
   public loadAll(entityInfo: IEntityInfo, criteria?: any):Observable<any[]>
    {
-     alert ("entree en service");
      let response: Observable<any[]>;
      response= this.http.get<Student[]> ("//localhost:8080/student/all");  
      return response.pipe(
