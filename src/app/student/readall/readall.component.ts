@@ -25,9 +25,11 @@ export class ReadallComponent implements OnInit {
   {
     this.students$=this.studentFacade.all$;
     this.studentFacade.loadAll();
+    
     this.students$.subscribe(students=>{
       console.log(students)
     })
+    
   }
 
 }

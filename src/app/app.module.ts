@@ -20,7 +20,6 @@ import { StudentFacade } from './facades/student.facade';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgrxAutoEntityModule.forRoot(),
     StoreModule.forRoot(appReducer, { 
       runtimeChecks: { 
           // Auto-Entity includes classes in its actions:
@@ -28,10 +27,10 @@ import { StudentFacade } from './facades/student.facade';
       }
   }),
     EffectsModule.forRoot([]),
-
+    NgrxAutoEntityModule.forRoot(),
+  
   ],
   providers: [{provide : Student, useClass:StudentService},
-    ,StudentService,
     StudentFacade
   ],
   bootstrap: [AppComponent]
