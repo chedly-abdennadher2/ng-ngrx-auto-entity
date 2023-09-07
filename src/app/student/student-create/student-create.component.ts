@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-student-create',
@@ -11,5 +12,9 @@ export class StudentCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public receive (form : NgForm)
+  {
+    console.log(form.value);
+  
+  }
 }

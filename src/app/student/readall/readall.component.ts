@@ -3,7 +3,6 @@ import { StudentService } from '../../services/studentservice';
 import { Student } from '../../model/Student';
 import { StudentFacade } from 'src/app/facades/student.facade';
 import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-readall',
   templateUrl: './readall.component.html',
@@ -11,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ReadallComponent implements OnInit {
   students$:Observable<Student[]>
-
+  students : Student[]
     constructor(
     
     private studentFacade:StudentFacade 
@@ -27,9 +26,9 @@ export class ReadallComponent implements OnInit {
     this.studentFacade.loadAll();
     
     this.students$.subscribe(students=>{
-      console.log(students)
+      this.students=students
+
     })
-    
   }
 
 }

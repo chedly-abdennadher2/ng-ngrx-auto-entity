@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { Student } from './model/Student';
 import { StudentService } from './services/studentservice';
 import { StudentFacade } from './facades/student.facade';
+import { StudentModule } from './student/student.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { StudentFacade } from './facades/student.facade';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    StudentModule,
     AppRoutingModule,
     StoreModule.forRoot(appReducer, { 
       runtimeChecks: { 

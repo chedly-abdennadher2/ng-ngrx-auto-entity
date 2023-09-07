@@ -1,1 +1,8 @@
-<p> bonjour </p>
+<form (ngSubmit)="receive(f)" #f="ngForm"> 
+    <label for="staticEmail" class="col-form-label" style="color: blue"> nom</label>
+    <input type="text" name="firstName" ngModel>
+    <label for="staticEmail" class="col-form-label" style="color: blue"> prénom</label>
+    <input type="text" name="lastName" ngModel>
+<input type ="submit" value="envoyer"/>
+
+</form> 

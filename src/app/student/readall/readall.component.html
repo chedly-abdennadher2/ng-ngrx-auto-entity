@@ -1,2 +1,13 @@
 <p>readall works!</p>
 <button (click)="readAll()"> ok</button>
+<div *ngIf="students!=null;then contenu_bon else contenu_pas_bon"> 
+    </div>
+<ng-template #contenu_bon>
+<div  *ngFor="let student of students ">
+{{student.firstName}}
+
+</div>    
+
+</ng-template>
+<ng-template #contenu_pas_bon>Le contenu stocké ici s'affichera uniquement si la condition n'est pas remplie.</ng-template>
+
