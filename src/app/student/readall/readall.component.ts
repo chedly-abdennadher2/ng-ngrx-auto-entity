@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ReadallComponent implements OnInit {
   students$:Observable<Student[]>
   students : Student[]
+  public x=2;
     constructor(
     
     private studentFacade:StudentFacade 
@@ -19,9 +20,6 @@ export class ReadallComponent implements OnInit {
   
   }
   ngOnInit(): void {
-  }
-  public   readAll()
-  {
     this.students$=this.studentFacade.all$;
     this.studentFacade.loadAll();
     
@@ -30,5 +28,6 @@ export class ReadallComponent implements OnInit {
 
     })
   }
+
 
 }

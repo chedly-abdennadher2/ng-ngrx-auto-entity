@@ -1,13 +1,43 @@
-<p>readall works!</p>
-<button (click)="readAll()"> ok</button>
+<br/>
+<br/>
+
 <div *ngIf="students!=null;then contenu_bon else contenu_pas_bon"> 
     </div>
-<ng-template #contenu_bon>
-<div  *ngFor="let student of students ">
-{{student.firstName}}
 
-</div>    
+<ng-template #contenu_bon>
+
+        <table border="1"> 
+<tr>
+    <td>
+        id 
+    </td>
+    <td>
+        nom 
+    </td>
+    <td>
+        prénom 
+    </td>
+    <td>actions </td>
+</tr>
+<tr  *ngFor="let student of students ">
+<td>{{student.id}}</td>
+   <td> {{student.firstName}}
+</td>
+   <td> {{student.lastName}}
+</td>
+<td>
+    &nbsp;
+     <a routerLink='/student/update/{{student.id}}'>  modifier </a>  
+    &nbsp;
+    &nbsp;
+    <button>supprimer</button>
+
+</td>
+
+</tr>    
+    </table>
 
 </ng-template>
-<ng-template #contenu_pas_bon>Le contenu stocké ici s'affichera uniquement si la condition n'est pas remplie.</ng-template>
+
+<ng-template #contenu_pas_bon> Le contenu stocké ici s'affichera uniquement si la condition n'est pas remplie.</ng-template>
 
