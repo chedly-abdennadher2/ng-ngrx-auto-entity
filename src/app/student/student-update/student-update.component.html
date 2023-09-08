@@ -1,1 +1,19 @@
-<p>student-update works!</p>
+<div *ngIf="student!=null;then contenu_bon else contenu_pas_bon"> 
+</div>
+
+<ng-template #contenu_bon>
+    <form (ngSubmit)="receive(f)" #f="ngForm"> 
+        <label for="staticEmail" class="col-form-label" style="color: blue"> nom</label>
+        <input type="text" name="firstName" [(ngModel)]="firstName">
+        <label for="staticEmail" class="col-form-label" style="color: blue"> prénom</label>
+        <input type="text" name="lastName" [(ngModel)]="lastName">
+    <input type ="submit" value="envoyer"/>
+    
+    </form> 
+</ng-template>
+
+<ng-template #contenu_pas_bon> 
+    pas encore
+</ng-template>
+
+

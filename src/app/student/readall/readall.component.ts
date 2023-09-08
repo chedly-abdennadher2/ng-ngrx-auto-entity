@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
 export class ReadallComponent implements OnInit {
   students$:Observable<Student[]>
   students : Student[]
-  public x=2;
     constructor(
     
     private studentFacade:StudentFacade 

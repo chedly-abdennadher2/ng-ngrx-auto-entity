@@ -11,6 +11,12 @@ import { map } from 'rxjs/operators';
 export class StudentService  implements  IAutoEntityService<any>{
 
 public   constructor(private http: HttpClient) { }
+  public load(entityInfo: IEntityInfo, keys: any, criteria?: any): Observable<any> {
+    let response: Observable<any>;
+    console.log (keys);
+    response= this.http.get<Student> ("//localhost:8080/student/find/"+keys);  
+    return response;   
+  }  
   public loadAll(entityInfo: IEntityInfo, criteria?: any):Observable<any[]>
    {
      let response: Observable<any[]>;
