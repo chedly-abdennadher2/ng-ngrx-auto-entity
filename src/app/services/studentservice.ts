@@ -55,4 +55,14 @@ public   constructor(private http: HttpClient) { }
     console.log(student)
     return this.http.post("//localhost:8080/student/save/",student)
   }
+  public update(entityInfo:IEntityInfo,student:Student):Observable<any>
+  {
+    console.log(student)
+    return this.http.put("//localhost:8080/student/update/",student)
+  }
+  public delete(entityInfo: IEntityInfo, student:Student, criteria?: any, originalEntity?: any): Observable<any> {
+    console.log (student+"service")
+    return this.http.delete("//localhost:8080/student/delete/"+student.id)
+    
+  }
 }

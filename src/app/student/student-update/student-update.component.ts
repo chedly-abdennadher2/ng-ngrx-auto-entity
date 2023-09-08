@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -41,7 +42,7 @@ export class StudentUpdateComponent implements OnInit {
     student.lastName=form.value.lastName;
     student.id =this.id;
     console.log (student)
-    this.studentFacade.create(student) 
+    this.studentFacade.update(student) 
   
   }
 
